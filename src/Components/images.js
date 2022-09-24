@@ -9,6 +9,7 @@ import moog_slimphatty from '../images/moog_slimphatty.jpeg';
 import Roland_TR808 from '../images/Roland_TR808.jpeg';
 import Roland_TR909 from '../images/Roland_TR909.jpeg';
 import Yamaha_FB01 from '../images/Yamaha_FB-01.jpeg';
+import Yamaha_Rm1x from '../images/Yamaha_Rm1x.jpeg';
 
 let allImages = [
     Akai_MPC2000,
@@ -21,7 +22,8 @@ let allImages = [
     moog_slimphatty,
     Roland_TR808,
     Roland_TR909,
-    Yamaha_FB01
+    Yamaha_FB01,
+    Yamaha_Rm1x
 ];
 
 export default allImages;

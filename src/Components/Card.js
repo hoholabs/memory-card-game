@@ -2,9 +2,9 @@ import React from 'react';
 
 function Card(props) {
     return (
-        <button onClick={props.shuffle}>
+        <button className="card" onClick={props.shuffle}>
             {props.image}
-            CARD{props.title}
+            {props.title}
         </button>
     );
 }

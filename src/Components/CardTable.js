@@ -40,8 +40,7 @@ function CardTable(props) {
     }, []);
 
     return (
-        <div>
-            CardTable
+        <div id="cardTable">
             {cards.map((eachCard) => {
                 return (
                     <Card
