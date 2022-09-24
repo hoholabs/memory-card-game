@@ -1,7 +1,12 @@
 import React from 'react';
 
 function Card(props) {
-    return <div>CARD{props.title}</div>;
+    return (
+        <button onClick={props.shuffle}>
+            {props.image}
+            CARD{props.title}
+        </button>
+    );
 }
 
 export default Card;
