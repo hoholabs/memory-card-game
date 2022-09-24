@@ -35,6 +35,39 @@ function CardTable(props) {
         setCards(initialCards);
     }, []);
 
+    useEffect(() => {
+        if (props.score === 12) {
+            alert('you win');
+        }
+    }, [props.score]);
+
+    function cardClicked(id) {
+        checkLose(id);
+
+        let newCards = cards.map((card) => {
+            if (card.id === id) {
+                card.chosen = true;
+                console.log(card);
+                return card;
+            } else {
+                return card;
+            }
+        });
+
+        setCards(newCards);
+        props.setScore(props.score + 1);
+        shuffle();
+    }
+
+    function checkLose(id) {
+        cards.map((card) => {
+            if (card.id === id && card.chosen) {
+                alert('you lose');
+            }
+            return null;
+        });
+    }
+
     function shuffle() {
         let shuffledCards = [];
 
@@ -64,10 +97,12 @@ function CardTable(props) {
             {cards.map((eachCard) => {
                 return (
                     <Card
-                        key={eachCard.id}
+                        key={uuid()}
+                        id={eachCard.id}
                         image={eachCard.image}
                         title={eachCard.title}
-                        shuffle={shuffle}
+                        chosen={eachCard.chosen}
+                        cardClicked={cardClicked}
                     />
                 );
             })}

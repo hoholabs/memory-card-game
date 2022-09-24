@@ -1,12 +1,17 @@
 import React from 'react';
 
-function Card(props) {
+export default function Card(props) {
+    const clicked = props.chosen ? { style: { backgroundColor: 'white' } } : {};
     return (
-        <button className="card" onClick={props.shuffle}>
+        <button
+            className="card"
+            {...clicked}
+            onClick={() => {
+                props.cardClicked(props.id);
+            }}
+        >
             {props.image}
             {props.title}
         </button>
     );
 }
-
-export default Card;

@@ -8,17 +8,22 @@
 
 #cardTable {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 1vw;
+    grid-template-columns: repeat(4, 20vw);
     grid-template-rows: 1fr 1fr 1fr;
+    background-color: aquamarine;
+    padding: 1vw;
 }
 
 .card {
     background-color: white;
-    height: 25vw;
+    height: 20vw;
+    width: 20vw;
+    border-radius: 3rem;
 }
 
 .card img {
     object-fit: scale-down;
-    height: 8rem;
-    width: 9rem;
+    height: 15vw;
+    width: 15vw;
 }
