@@ -18,10 +18,6 @@ const cardImages = [
     <img src={allImages[11]} alt="Yamaha Rm1x"></img>
 ];
 
-function shuffle() {
-    console.log('shuffle');
-}
-
 function CardTable(props) {
     const [cards, setCards] = useState([]);
 
@@ -38,6 +34,30 @@ function CardTable(props) {
 
         setCards(initialCards);
     }, []);
+
+    function shuffle() {
+        let shuffledCards = [];
+
+        let newCards = cards.map((card) => {
+            card.position = Math.floor(Math.random() * 12);
+            return card;
+        });
+
+        for (let index = 0; index < newCards.length; index++) {
+            const a = newCards[index];
+            const b = newCards[index + 1];
+
+            if (b === undefined) {
+                shuffledCards.splice(a.position, 0, a);
+            } else {
+                a.position > b.position
+                    ? shuffledCards.unshift(a)
+                    : shuffledCards.push(a);
+            }
+        }
+
+        setCards(shuffledCards);
+    }
 
     return (
         <div id="cardTable">
