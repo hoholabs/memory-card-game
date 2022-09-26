@@ -1,15 +1,27 @@
 {
   "files": {
-    "main.css": "/memory-card-game/static/css/main.073c9b0a.css",
-    "main.js": "/memory-card-game/static/js/main.c4530d01.js",
+    "main.css": "/memory-card-game/static/css/main.a32de3cb.css",
+    "main.js": "/memory-card-game/static/js/main.d697c785.js",
     "static/js/787.079dd69e.chunk.js": "/memory-card-game/static/js/787.079dd69e.chunk.js",
+    "static/media/Linn_LinnDrum.jpeg": "/memory-card-game/static/media/Linn_LinnDrum.afeb198b538f4219a374.jpeg",
+    "static/media/Yamaha_Rm1x.jpeg": "/memory-card-game/static/media/Yamaha_Rm1x.c4aa5927625f232d5616.jpeg",
+    "static/media/Roland_TR909.jpeg": "/memory-card-game/static/media/Roland_TR909.8feeda54ba0c8a6d51c1.jpeg",
+    "static/media/moog_slimphatty.jpeg": "/memory-card-game/static/media/moog_slimphatty.a303423cf511139883e5.jpeg",
+    "static/media/Korg_ER-1.jpeg": "/memory-card-game/static/media/Korg_ER-1.29639c8a1f4f70bc9281.jpeg",
+    "static/media/Roland_TR808.jpeg": "/memory-card-game/static/media/Roland_TR808.3f1112038a87397f9e0a.jpeg",
+    "static/media/elektron_MACHINEDRUM SPS-1.jpeg": "/memory-card-game/static/media/elektron_MACHINEDRUM SPS-1.a643e4d5a4c71ead9aa6.jpeg",
+    "static/media/Akai_MPC2000.jpeg": "/memory-card-game/static/media/Akai_MPC2000.c83816151ef31cedec9c.jpeg",
+    "static/media/Korg_EA-1.jpeg": "/memory-card-game/static/media/Korg_EA-1.8b7ba36e94d638998be0.jpeg",
+    "static/media/Yamaha_FB-01.jpeg": "/memory-card-game/static/media/Yamaha_FB-01.d4f0da365052cbdb2b0c.jpeg",
+    "static/media/Alesis_3630.jpeg": "/memory-card-game/static/media/Alesis_3630.9697452a21c83d17f51d.jpeg",
+    "static/media/Akai_S2000.jpeg": "/memory-card-game/static/media/Akai_S2000.4d4a3c240d1dec09109d.jpeg",
     "index.html": "/memory-card-game/index.html",
-    "main.073c9b0a.css.map": "/memory-card-game/static/css/main.073c9b0a.css.map",
-    "main.c4530d01.js.map": "/memory-card-game/static/js/main.c4530d01.js.map",
+    "main.a32de3cb.css.map": "/memory-card-game/static/css/main.a32de3cb.css.map",
+    "main.d697c785.js.map": "/memory-card-game/static/js/main.d697c785.js.map",
     "787.079dd69e.chunk.js.map": "/memory-card-game/static/js/787.079dd69e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.c4530d01.js"
+    "static/css/main.a32de3cb.css",
+    "static/js/main.d697c785.js"
   ]
 }
