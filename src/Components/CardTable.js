@@ -20,6 +20,7 @@ const cardImages = [
 
 function CardTable(props) {
     const [cards, setCards] = useState([]);
+    const [start, setStart] = useState('true');
 
     useEffect(() => {
         let initialCards = cardImages.map((element) => {
@@ -33,39 +34,54 @@ function CardTable(props) {
         });
 
         setCards(initialCards);
-    }, []);
+        setStart('false');
+        props.setScore(0);
+    }, [start]);
 
     useEffect(() => {
         if (props.score === 12) {
             alert('you win');
+            resetGame();
         }
     }, [props.score]);
 
     function cardClicked(id) {
-        checkLose(id);
+        // let g = checkLose(id);
 
-        let newCards = cards.map((card) => {
-            if (card.id === id) {
-                card.chosen = true;
-                console.log(card);
-                return card;
-            } else {
-                return card;
-            }
-        });
-
-        setCards(newCards);
-        props.setScore(props.score + 1);
-        shuffle();
+        if (checkLose(id)) {
+            alert('you lose');
+            resetGame();
+        } else {
+            //update the state of the card to chosen
+            let newCards = cards.map((card) => {
+                if (card.id === id) {
+                    card.chosen = true;
+                    return card;
+                } else {
+                    return card;
+                }
+            });
+            setCards(newCards);
+            props.setScore(props.score + 1);
+            shuffle();
+        }
     }
 
     function checkLose(id) {
-        cards.map((card) => {
-            if (card.id === id && card.chosen) {
-                alert('you lose');
+        let reply = false;
+
+        cards.forEach((card) => {
+            if ((card.id === id) & card.chosen) {
+                reply = true;
             }
-            return null;
         });
+
+        return reply;
+    }
+
+    function resetGame() {
+        props.setScore(0);
+        setStart('true');
     }
 
     function shuffle() {
