@@ -20,7 +20,6 @@ const cardImages = [
 
 function CardTable(props) {
     const [cards, setCards] = useState([]);
-    const [start, setStart] = useState('true');
 
     useEffect(() => {
         let initialCards = cardImages.map((element) => {
@@ -33,24 +32,21 @@ function CardTable(props) {
             return card;
         });
 
-        setCards(initialCards);
-        setStart('false');
-        props.setScore(0);
-    }, [start]);
+        shuffle(initialCards);
+    }, []);
 
     useEffect(() => {
         if (props.score === 12) {
             alert('you win');
-            resetGame();
+            restartGame();
         }
     }, [props.score]);
 
     function cardClicked(id) {
-        // let g = checkLose(id);
-
         if (checkLose(id)) {
             alert('you lose');
-            resetGame();
+
+            restartGame();
         } else {
             //update the state of the card to chosen
             let newCards = cards.map((card) => {
@@ -63,7 +59,7 @@ function CardTable(props) {
             });
             setCards(newCards);
             props.setScore(props.score + 1);
-            shuffle();
+            shuffle(cards);
         }
     }
 
@@ -79,15 +75,10 @@ function CardTable(props) {
         return reply;
     }
 
-    function resetGame() {
-        props.setScore(0);
-        setStart('true');
-    }
-
-    function shuffle() {
+    function shuffle(deck) {
         let shuffledCards = [];
 
-        let newCards = cards.map((card) => {
+        let newCards = deck.map((card) => {
             card.position = Math.floor(Math.random() * 12);
             return card;
         });
@@ -106,6 +97,20 @@ function CardTable(props) {
         }
 
         setCards(shuffledCards);
+    }
+
+    function restartGame() {
+        let resetCards = cards.map((card) => {
+            card.chosen = false;
+            return card;
+        });
+
+        setCards(resetCards);
+
+        props.setScore(0);
+
+        shuffle(cards);
+        console.log('restart');
     }
 
     return (
