@@ -37,14 +37,14 @@ function CardTable(props) {
 
     useEffect(() => {
         if (props.score === 12) {
-            alert('you win');
+            alert('You win!');
             restartGame();
         }
     }, [props.score]);
 
     function cardClicked(id) {
         if (checkLose(id)) {
-            alert('you lose');
+            alert('You lose!\n' + 'Score:' + props.score);
 
             restartGame();
         } else {

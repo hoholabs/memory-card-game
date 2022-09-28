@@ -13,6 +13,7 @@ function ScoreBoard(props) {
 
     return (
         <div id="scoreBoard">
+            <div>Click each card once, and only once!</div>
             <div>Score:{props.score}</div>
             <div>High Score:{highScore}</div>
         </div>
